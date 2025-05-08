@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="cricket Matches And Scores" class="cricket-theme">
+        <div style="position: relative; z-index: 1;">
+                <div class="slds-p-around_medium">
+                    <lightning-combobox
+                        name="selectMatch"
+                        label="Filter series"
+                        value={selectedMatch}
+                        placeholder="Select Match"
+                        options={matchOptions}
+                        onchange={handleChange}
+                    ></lightning-combobox>
+                </div>
+                <template if:true={filteredMatches}>
+                    <template for:each={filteredMatches} for:item="match" for:index="id">
+                        <div key={match.id} class="slds-box slds-m-around_small slds-p-around_small match-box">
+                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_small">
+                                <div class="team-info">
+                                    <img src={match.t1img} alt={match.t1} style="height: 40px;" />
+                                    <p>{match.t1} - {match.t1s}</p>
+                                </div>
+                                <div class="team-info">
+                                    <img src={match.t2img} alt={match.t2} style="height: 40px;" />
+                                    <p>{match.t2} - {match.t2s}</p>
+                                </div>
+                            </div>
+                            <div class="match-details">
+                            <p><strong>Status:</strong> {match.status}</p>
+                            <p><strong>Date:</strong> {match.dateTimeGMT}</p>
+                            <p><strong>Series:</strong> {match.series}</p>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={filteredMatches}>
+                    <p class="slds-p-around_small">No matches found for selected series.</p>
+                </template>
+                
+        </div>
+    </lightning-card>
+</template>

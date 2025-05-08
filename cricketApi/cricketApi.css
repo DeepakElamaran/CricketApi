@@ -1,0 +1,36 @@
+.match-box {
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.match-box:hover {
+    transform: scale(1.01);
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-info img {
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.team-info p {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.match-details p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
